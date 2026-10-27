@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/kARTIKEYA-SHANKHDHAR/Ci-cd_pract.git'
+              git branch: 'main',
+            url: 'https://github.com/kARTIKEYA-SHANKHDHAR/Ci-cd_pract.git'
             }
         }
         stage('Build Image') {
