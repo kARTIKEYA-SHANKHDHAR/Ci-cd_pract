@@ -3,16 +3,16 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/kARTIKEYA-SHANKHDHAR/Ci-cd_pract.git'
             }
         }
-        stage('BuildImage') {
+        stage('Build Image') {
             steps {
                 sh 'docker build -t mywebsite .'
-                sh 'docker tag mywebsite Kartikeya12/mywebsite:latest'
+                sh 'docker tag mywebsite kartikeya12/mywebsite:latest'
             }
         }
-        stage('PushImage') {
+        stage('Push Image') {
             steps {
                 sh 'docker push kartikeya12/mywebsite:latest'
             }
